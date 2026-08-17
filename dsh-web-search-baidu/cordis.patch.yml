@@ -1,0 +1,14 @@
+# The dsh-web-search-baidu bundle patch: registers the Baidu search provider
+# into ctx.web and selects it as the active search provider. Overrides the
+# `web` row's whole `config` (patches replace, not merge) — restating
+# `searchProvider` here is what actually activates this provider; without
+# it, dsh-base's `searchProvider: deepseek-official` keeps winning.
+- insert:
+    - id: web-search-baidu
+      name: '@baidu-cloud-ai-search/dsh-web-search-baidu'
+
+
+- id: web
+  name: '@deepseek-ai/dsh-web'
+  config:
+    searchProvider: baidu

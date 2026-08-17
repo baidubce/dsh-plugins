@@ -1,0 +1,2 @@
+# dsh-plugins
+deepseek plugins
